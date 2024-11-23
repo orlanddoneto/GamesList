@@ -1,6 +1,7 @@
 package com.orlandoneto.gameslist.dto;
 
 import com.orlandoneto.gameslist.entities.Game;
+import com.orlandoneto.gameslist.projections.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameMinDTO {
@@ -19,6 +20,16 @@ public class GameMinDTO {
         this.imgUrl = entity.getImgUrl();
         this.shortDescription = entity.getShortDescription();
     }
+
+    public GameMinDTO(GameMinProjection entity){
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.year = entity.getGameYear();
+        this.imgUrl = entity.getImgUrl();
+        this.shortDescription = entity.getShortDescription();
+    }
+
+
 
     public Long getId() {
         return id;
